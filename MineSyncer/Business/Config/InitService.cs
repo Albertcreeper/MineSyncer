@@ -2,6 +2,7 @@
 using Business.Repositories;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
@@ -67,6 +68,11 @@ namespace Business.Files
             {
                 FileStream fileStream = File.Create(filePath);
                 fileStream.Close();
+            }
+
+            if(value is null)
+            {
+                value = string.Empty;
             }
 
             WritePrivateProfileString(section, key, value.ToString(), filePath);
