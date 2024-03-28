@@ -29,6 +29,7 @@ namespace Business.Repositories
             stopwatch.Start();
 
             _Stra.PullFromRemote(this, RemoteRepository);
+            Refresh();
 
             stopwatch.Stop();
             _Logger.LogInfo($"Finished synchronisation after <{stopwatch.ElapsedMilliseconds}> milliseconds");
@@ -40,6 +41,7 @@ namespace Business.Repositories
             stopwatch.Start();
 
             _Stra.PushToRemote(this, RemoteRepository);
+            RemoteRepository.Refresh();
 
             stopwatch.Stop();
             _Logger.LogInfo($"Finished synchronisation after <{stopwatch.ElapsedMilliseconds}> milliseconds");
