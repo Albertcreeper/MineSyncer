@@ -1,0 +1,44 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net7.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <AssemblyVersion>1.1.0.0</AssemblyVersion>
+    <FileVersion>1.1.0.0</FileVersion>
+    <PackageId>MineSyncer 1.1.0</PackageId>
+    <Version>1.1.0</Version>
+    <Authors>Albert Smidt</Authors>
+    <Company>Alberts Codingwelt</Company>
+    <Product>MineSyncer</Product>
+    <Description>Tool zur Synchronisation von Spielständen zwischen mehreren Geräten</Description>
+    <Copyright>Alberts Codingwelt</Copyright>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Resources\Icons\logo.ico" />
+    <None Remove="Resources\Images\background.jpg" />
+    <None Remove="Resources\Images\refresh.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Prism.Core" Version="8.0.0.1909" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Business\Business.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\Icons\logo.ico" />
+    <Resource Include="Resources\Images\background.jpg" />
+    <Resource Include="Resources\Images\refresh.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="App.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>
