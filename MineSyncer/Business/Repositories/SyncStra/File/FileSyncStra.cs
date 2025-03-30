@@ -12,14 +12,12 @@ namespace Business.Repositories.SyncStra.File
     public class FileSyncStra : ISyncStra
     {
         protected IFileService _FileService;
-        protected static ILogger<FileSyncStra> _Logger;
 
         public static readonly string Name = "File";
 
         public FileSyncStra()
         {
             _FileService = BaseFactory.GetFactory().GetService<IFileService>();
-            _Logger = BaseFactory.GetFactory().GetService<ILogManager>().GetLogger<FileSyncStra>();
         }
 
         public void PullFromRemote(ILocalRepository localRepository, IRemoteRepository remoteRepository)
